@@ -10,6 +10,13 @@ const singerStyle ={
   color:'red',
   backgroundColor:'white'
 }
+const singerList =[
+  {name:'Arafat',job:'Police'},
+  {name:'Abrab',job:'Teacher'},
+  {name:'Abdullah',job:'Hujur'},
+  {name:'Arnab',job:'Sport'}
+
+]
 
 function App() {
   const nayoks =['Rubel','Manna','Bappa','Jasim','Riyaz','Razzak','Sanwar']
@@ -28,6 +35,9 @@ function App() {
       }
       {
         nayika.map(nayika => <Person nayika={nayika}></Person>)
+      }
+      {
+        singerList.map(singer=><Friends actor={singer.name}></Friends>)
       }
       {/* First portion */}
         {/* <img src={logo} className="App-logo" alt="logo" />
