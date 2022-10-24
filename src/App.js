@@ -12,13 +12,20 @@ const singerStyle ={
 }
 
 function App() {
+  const nayoks =['Rubel','Manna','Bappa','Jasim','Riyaz','Razzak']
+  const nayika =['Mousumi','Sabnur','Purnuma']
   return (
     <div className="app">
-  
+     
       <header className="App-header">
+      {/* Adding the list for nayok */}
+      {
+        nayoks.map(nayok =><li>{nayok}</li>)
+      }
 
       <div className="container">
       
+      {/* First portion */}
         {/* <img src={logo} className="App-logo" alt="logo" />
         <h1>JSX</h1>
         <div className="container">
@@ -32,13 +39,21 @@ function App() {
         </div> */}
         
 
-
-
+{/* Second portition */}
+{/* 
         <Person nayok="Reshad" nayika="Afrina"></Person>
         <Person nayok="Reshad" nayika="Shemanto"></Person>
         <p>Rock mama</p>
         <Friends actor="Fahad" actress="Shemanto"></Friends>
+        <Friends actor="Mishu" actress="Shemanto"></Friends> */}
+        <Person nayok= {nayoks[0]} nayika={nayika[2]}></Person>
+        <Person nayok= {nayoks[3]} nayika={nayika[1]}></Person>
+        <p>Rock mama</p>
+        <Friends actor="Fahad" actress="Shemanto"></Friends>
         <Friends actor="Mishu" actress="Shemanto"></Friends>
+        
+
+        
 
         </div>
 
