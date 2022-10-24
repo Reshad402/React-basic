@@ -12,7 +12,7 @@ const singerStyle ={
 }
 
 function App() {
-  const nayoks =['Rubel','Manna','Bappa','Jasim','Riyaz','Razzak']
+  const nayoks =['Rubel','Manna','Bappa','Jasim','Riyaz','Razzak','Sanwar']
   const nayika =['Mousumi','Sabnur','Purnuma']
   return (
     <div className="app">
@@ -22,9 +22,13 @@ function App() {
       {
         nayoks.map(nayok =><li>{nayok}</li>)
       }
-
-      <div className="container">
-      
+      {/* Now making the person term dynamic */}
+      {
+        nayoks.map(nayok =><Person name={nayok}></Person>)
+      }
+      {
+        nayika.map(nayika => <Person nayika={nayika}></Person>)
+      }
       {/* First portion */}
         {/* <img src={logo} className="App-logo" alt="logo" />
         <h1>JSX</h1>
@@ -46,16 +50,17 @@ function App() {
         <p>Rock mama</p>
         <Friends actor="Fahad" actress="Shemanto"></Friends>
         <Friends actor="Mishu" actress="Shemanto"></Friends> */}
-        <Person nayok= {nayoks[0]} nayika={nayika[2]}></Person>
-        <Person nayok= {nayoks[3]} nayika={nayika[1]}></Person>
+        {/* It is the form to make item from the array list */}
+        {/* <Person nayok= {nayoks[0]} nayika={nayika[2]}></Person>
+        <Person nayok= {nayoks[3]} nayika={nayika[1]}></Person> */}
         <p>Rock mama</p>
-        <Friends actor="Fahad" actress="Shemanto"></Friends>
-        <Friends actor="Mishu" actress="Shemanto"></Friends>
+        {/* <Friends actor="Fahad" actress="Shemanto"></Friends>
+        <Friends actor="Mishu" actress="Shemanto"></Friends> */}
         
 
         
 
-        </div>
+      
 
       </header>
     
@@ -68,8 +73,10 @@ function Person(props){
   console.log(props)
   return (
     <div className='person'>
-      <h2>{props.nayok}</h2>
-      <p>Nayika is {props.nayika}</p>
+      <h2>{props.name}</h2>
+      {/* je nam dibo ta er modde thakbe.
+      <Person (nayok)= {nayoks[0]} nayika={nayika[2]}></Person> */}
+      <p>{props.nayika}</p>
     </div>
   )
 }
@@ -78,7 +85,7 @@ function Person(props){
     return (
       <div className="person2">
         <h2>{props.actor}</h2>
-      <p>Nayika for 2nd is {props.actress}</p>
+      <p>{props.actress}</p>
       </div>
     )
   }
